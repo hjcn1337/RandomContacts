@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  ContactViewController.swift
 //  RandomContacts
 //
 //  Created by Ростислав Ермаченков on 05.03.2021.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class ContactViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
-
