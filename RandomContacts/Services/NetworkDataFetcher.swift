@@ -30,7 +30,6 @@ struct NetworkDataFetcher: DataFetcher {
             }
             
             let decoded = self.decodeJSON(type: UsersResponse.self, from: data)
-            print(decoded)
             response(decoded)
         }
     }

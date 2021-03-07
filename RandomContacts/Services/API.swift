@@ -11,5 +11,5 @@ enum API {
     static let scheme = "https"
     static let host = "randomuser.me"
     static let users = "/api/"
-    static let usersAmountString = "10"
+    static let usersAmountString = "1000"
 }

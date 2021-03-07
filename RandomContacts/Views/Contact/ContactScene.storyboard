@@ -11,54 +11,88 @@
         <!--Contact View Controller-->
         <scene sceneID="hrT-tT-YXV">
             <objects>
-                <viewController id="F9S-CB-hyU" customClass="ContactViewController" customModule="RandomContacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactViewController" id="F9S-CB-hyU" customClass="ContactViewController" customModule="RandomContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qao-35-1NE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fullname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZM-Q8-9uN">
-                                <rect key="frame" x="20" y="74" width="82" height="24"/>
+                                <rect key="frame" x="20" y="294" width="82" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNf-fC-Ygm">
-                                <rect key="frame" x="20" y="128" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="348" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ownerFullname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMU-oB-uYe">
-                                <rect key="frame" x="20" y="178.5" width="116" height="21"/>
+                                <rect key="frame" x="20" y="398.5" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If1-aU-jQK">
-                                <rect key="frame" x="20" y="229.5" width="41" height="21"/>
+                                <rect key="frame" x="20" y="449.5" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iXt-L3-bMr" customClass="WebImageView" customModule="VKNewsfeed" customModuleProvider="target">
+                                <rect key="frame" x="20" y="44" width="374" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iXt-L3-bMr" secondAttribute="height" multiplier="17:11" id="4NN-In-JBz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-Wt-5dz">
+                                <rect key="frame" x="75" y="504" width="77" height="30"/>
+                                <state key="normal" title="Позвонить"/>
+                                <connections>
+                                    <action selector="callPhoneButtonPressed:" destination="F9S-CB-hyU" eventType="touchUpInside" id="C0K-ga-gHg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBg-H9-x4i">
+                                <rect key="frame" x="226" y="504" width="112" height="30"/>
+                                <state key="normal" title="Отправить SMS"/>
+                                <connections>
+                                    <action selector="sendMessageButtonPressed:" destination="F9S-CB-hyU" eventType="touchUpInside" id="4fb-c4-7lb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sHv-Hy-3ZR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iXt-L3-bMr" firstAttribute="top" secondItem="sHv-Hy-3ZR" secondAttribute="top" id="3RO-O6-RPJ"/>
                             <constraint firstItem="XNf-fC-Ygm" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="6bm-IZ-apL"/>
-                            <constraint firstItem="1ZM-Q8-9uN" firstAttribute="top" secondItem="sHv-Hy-3ZR" secondAttribute="top" constant="30" id="6cr-Ms-BV9"/>
+                            <constraint firstItem="iXt-L3-bMr" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="7kG-tD-jPS"/>
                             <constraint firstItem="1ZM-Q8-9uN" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="AJX-mW-wfE"/>
                             <constraint firstItem="XNf-fC-Ygm" firstAttribute="top" secondItem="1ZM-Q8-9uN" secondAttribute="bottom" constant="30" id="JG1-TB-Fbl"/>
+                            <constraint firstItem="sHv-Hy-3ZR" firstAttribute="trailing" secondItem="iXt-L3-bMr" secondAttribute="trailing" constant="20" id="Jz2-od-osR"/>
                             <constraint firstItem="If1-aU-jQK" firstAttribute="top" secondItem="pMU-oB-uYe" secondAttribute="bottom" constant="30" id="O5a-c6-Qks"/>
+                            <constraint firstItem="aOd-Wt-5dz" firstAttribute="top" secondItem="If1-aU-jQK" secondAttribute="bottom" constant="33.5" id="PRj-b9-XjS"/>
+                            <constraint firstItem="1ZM-Q8-9uN" firstAttribute="top" secondItem="iXt-L3-bMr" secondAttribute="bottom" constant="8" symbolic="YES" id="dc9-07-xOy"/>
+                            <constraint firstItem="rBg-H9-x4i" firstAttribute="leading" secondItem="aOd-Wt-5dz" secondAttribute="trailing" constant="74" id="ddr-uu-Frn"/>
                             <constraint firstItem="sHv-Hy-3ZR" firstAttribute="trailing" secondItem="XNf-fC-Ygm" secondAttribute="trailing" constant="20" id="e6e-LA-fHl"/>
+                            <constraint firstItem="aOd-Wt-5dz" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="75" id="eC0-gz-HnX"/>
                             <constraint firstItem="If1-aU-jQK" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="hya-tb-8vZ"/>
                             <constraint firstItem="pMU-oB-uYe" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="rK0-g4-Vkg"/>
+                            <constraint firstItem="rBg-H9-x4i" firstAttribute="top" secondItem="If1-aU-jQK" secondAttribute="bottom" constant="33.5" id="vYz-fs-8BU"/>
                             <constraint firstItem="pMU-oB-uYe" firstAttribute="top" secondItem="XNf-fC-Ygm" secondAttribute="bottom" constant="30" id="yZT-kF-wOP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="If1-aU-jQK" id="Mpr-bl-Gxz"/>
+                        <outlet property="imageView" destination="iXt-L3-bMr" id="SSj-W1-h55"/>
+                        <outlet property="nameLabel" destination="XNf-fC-Ygm" id="71I-us-pJm"/>
+                        <outlet property="phoneLabel" destination="pMU-oB-uYe" id="PX0-FI-R0s"/>
+                        <outlet property="surnameLabel" destination="1ZM-Q8-9uN" id="UkL-mn-ZJF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgD-4H-llj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="72"/>
+            <point key="canvasLocation" x="266.66666666666669" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>

@@ -21,14 +21,15 @@
 		52A14B2325F26EBB00C30753 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B2225F26EBB00C30753 /* UsersResponse.swift */; };
 		52A14B2925F26F3F00C30753 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B2825F26F3F00C30753 /* WebImageView.swift */; };
 		52A14B2D25F271CB00C30753 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B2C25F271CB00C30753 /* ContactsService.swift */; };
-		52A14B3125F2723400C30753 /* TestNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B3025F2723400C30753 /* TestNetworkManager.swift */; };
-		52A14B3825F2789300C30753 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B3725F2789300C30753 /* UsersViewModel.swift */; };
 		52A14B3C25F278BA00C30753 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B3B25F278BA00C30753 /* ContactsViewController.swift */; };
 		52A14B3F25F278C500C30753 /* ContactsScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A14B3E25F278C500C30753 /* ContactsScene.storyboard */; };
 		52A14B4525F27A6100C30753 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B4425F27A6100C30753 /* UsersCell.swift */; };
 		52A14B4925F27A7600C30753 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B4825F27A7600C30753 /* Constants.swift */; };
 		52A14B4F25F27FA500C30753 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B4E25F27FA500C30753 /* ContactViewController.swift */; };
 		52A14B5625F27FBC00C30753 /* ContactScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A14B5525F27FBC00C30753 /* ContactScene.storyboard */; };
+		52A14B5A25F3F87D00C30753 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B5925F3F87D00C30753 /* ContactsViewModel.swift */; };
+		52A14B5D25F3F8A700C30753 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B5C25F3F8A700C30753 /* Contact.swift */; };
+		52A14B6425F4175A00C30753 /* MessagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B6325F4175A00C30753 /* MessagesHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,14 +49,15 @@
 		52A14B2225F26EBB00C30753 /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		52A14B2825F26F3F00C30753 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		52A14B2C25F271CB00C30753 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
-		52A14B3025F2723400C30753 /* TestNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkManager.swift; sourceTree = "<group>"; };
-		52A14B3725F2789300C30753 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		52A14B3B25F278BA00C30753 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		52A14B3E25F278C500C30753 /* ContactsScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactsScene.storyboard; sourceTree = "<group>"; };
 		52A14B4425F27A6100C30753 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		52A14B4825F27A7600C30753 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52A14B4E25F27FA500C30753 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		52A14B5525F27FBC00C30753 /* ContactScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactScene.storyboard; sourceTree = "<group>"; };
+		52A14B5925F3F87D00C30753 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		52A14B5C25F3F8A700C30753 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		52A14B6325F4175A00C30753 /* MessagesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,6 @@
 				52A14B0125F26D5D00C30753 /* LaunchScreen.storyboard */,
 				52A14B0425F26D5D00C30753 /* Info.plist */,
 				52A14AFC25F26D5A00C30753 /* RandomContacts.xcdatamodeld */,
-				52A14B3025F2723400C30753 /* TestNetworkManager.swift */,
 			);
 			path = RandomContacts;
 			sourceTree = "<group>";
@@ -113,6 +114,7 @@
 				52A14B1425F26E3100C30753 /* NetworkDataFetcher.swift */,
 				52A14B1725F26E4500C30753 /* CoreDataStack.swift */,
 				52A14B1B25F26E7C00C30753 /* CoreDataManager.swift */,
+				52A14B6325F4175A00C30753 /* MessagesHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -129,7 +131,7 @@
 		52A14B2525F26EC200C30753 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				52A14B2225F26EBB00C30753 /* UsersResponse.swift */,
+				52A14B5C25F3F8A700C30753 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,7 +139,7 @@
 		52A14B2625F26ECC00C30753 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				52A14B3725F2789300C30753 /* UsersViewModel.swift */,
+				52A14B5925F3F87D00C30753 /* ContactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -145,6 +147,7 @@
 		52A14B2B25F271C200C30753 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				52A14B2225F26EBB00C30753 /* UsersResponse.swift */,
 				52A14B2C25F271CB00C30753 /* ContactsService.swift */,
 			);
 			path = Contacts;
@@ -263,16 +266,17 @@
 				52A14B1525F26E3100C30753 /* NetworkDataFetcher.swift in Sources */,
 				52A14B0D25F26DF900C30753 /* NetworkService.swift in Sources */,
 				52A14B3C25F278BA00C30753 /* ContactsViewController.swift in Sources */,
+				52A14B6425F4175A00C30753 /* MessagesHelper.swift in Sources */,
+				52A14B5A25F3F87D00C30753 /* ContactsViewModel.swift in Sources */,
 				52A14B4F25F27FA500C30753 /* ContactViewController.swift in Sources */,
 				52A14B2D25F271CB00C30753 /* ContactsService.swift in Sources */,
 				52A14B2025F26EA800C30753 /* Constraints.swift in Sources */,
 				52A14AF425F26D5A00C30753 /* AppDelegate.swift in Sources */,
-				52A14B3125F2723400C30753 /* TestNetworkManager.swift in Sources */,
 				52A14AF625F26D5A00C30753 /* SceneDelegate.swift in Sources */,
+				52A14B5D25F3F8A700C30753 /* Contact.swift in Sources */,
 				52A14B4525F27A6100C30753 /* UsersCell.swift in Sources */,
 				52A14B1125F26E1400C30753 /* API.swift in Sources */,
 				52A14B1C25F26E7C00C30753 /* CoreDataManager.swift in Sources */,
-				52A14B3825F2789300C30753 /* UsersViewModel.swift in Sources */,
 				52A14AFE25F26D5A00C30753 /* RandomContacts.xcdatamodeld in Sources */,
 				52A14B1825F26E4500C30753 /* CoreDataStack.swift in Sources */,
 				52A14B4925F27A7600C30753 /* Constants.swift in Sources */,

@@ -13,47 +13,103 @@ class ContactsViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    private var usersViewModel = UsersViewModel.init(cells: [])
+    let network = ContactsService()
+    let coreDataManager = CoreDataManager()
+    
+    let activityView = UIActivityIndicatorView(style: .large)
+    
+    private var viewModel = ContactsViewModel()  {
+        
+        didSet {
+            self.table.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupTable()
         
-        let network = ContactsService()
+        getContacts()
+    }
+    
+    private func getContacts() {
+        let contacts = coreDataManager.getContacts()
         
-        network.getUsers { (vm) in
-            self.usersViewModel = vm
+        if contacts.isEmpty {
+            network.getUsers { users in
+    
+                let users = users.map { user in
+                    return ContactViewModel(imageUrlString: user.imageUrlString, title: user.title, name: user.name, surname: user.surname, phone: user.phone, email: user.email)
+                }
+                
+                self.viewModel = ContactsViewModel(contacts: users)
+                
+                for contact in self.viewModel.contacts {
+                    self.coreDataManager.createContact(contact: contact)
+                }
+            }
+            
+        } else {
+            
+            let contactsViewModel = contacts.map { contact in
+                return ContactViewModel(imageUrlString: contact.imageUrlString ?? "", title: contact.title ?? "", name: contact.name ?? "", surname: contact.surname ?? "", phone: contact.phone ?? "", email: contact.email ?? "")
+                
+            }
+            self.viewModel = ContactsViewModel(contacts: contactsViewModel)
         }
+        
+    }
+    
+    private func setupTable() {
+        table.register(ContactsCell.self, forCellReuseIdentifier: ContactsCell.reuseId)
+    }
+    
+    private func showActivityIndicatory() {
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
+        activityView.startAnimating()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        guard let searchStr = searchBar.text else { return }
+        //searchString = searchStr
+        
+        showActivityIndicatory()
     }
 
 }
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usersViewModel.cells.count
+        return viewModel.contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ReposCell.reuseId, for: indexPath) as! ReposCell
-        let cellViewModel = usersViewModel.cells[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactsCell.reuseId, for: indexPath) as! ContactsCell
+        let cellViewModel = viewModel.contacts[indexPath.row]
         cell.set(viewModel: cellViewModel)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 200
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cellViewModel = usersViewModel.cells[indexPath.row]
+        let cellViewModel = viewModel.contacts[indexPath.row]
         
         let storyboard = UIStoryboard(name: "ContactScene", bundle: nil)
-        guard let repoViewController = storyboard.instantiateViewController(identifier: "ContactViewController") as? ContactViewController else { return }
+        guard let contactViewController = storyboard.instantiateViewController(identifier: "ContactViewController") as? ContactViewController else { return }
         
-//        repoViewController.repoDescription = cellViewModel.description ?? "s"
-//        repoViewController.repoFullName = cellViewModel.fullName
-//        repoViewController.repoOwnerLogin = cellViewModel.ownerLogin
+
+        contactViewController.email = cellViewModel.email
+        contactViewController.name = cellViewModel.name
+        contactViewController.phone = cellViewModel.phone
+        contactViewController.imageUrlString = cellViewModel.imageUrlString
         
-        navigationController?.pushViewController(repoViewController, animated: true)
+        present(contactViewController, animated: true)
     }
 }
