@@ -11,6 +11,7 @@ import UIKit
 class ContactViewController: UIViewController {
     
     var name = ""
+    var surname = ""
     var email = ""
     var phone = ""
     var imageUrlString = ""
@@ -24,12 +25,31 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        surnameLabel.text = name
+        surnameLabel.text = surname
         nameLabel.text = name
         phoneLabel.text = phone
         emailLabel.text = email
         imageView.set(imageURL: imageUrlString)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+
+        self.imageView.addGestureRecognizer(tapGestureRecognizer)
+        self.imageView.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func imageViewTapped(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            
+            print("sddssd")
+            
+            let storyboard = UIStoryboard(name: "ContactPhotoScene", bundle: nil)
+            guard let contactPhotoViewController = storyboard.instantiateViewController(identifier: "ContactPhotoViewController") as? ContactPhotoViewController else { return }
+            
+            contactPhotoViewController.imageUrlString = imageUrlString
+            
+            present(contactPhotoViewController, animated: true)
+        }
     }
     
     @IBAction func callPhoneButtonPressed(_ sender: Any) {

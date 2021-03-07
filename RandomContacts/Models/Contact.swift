@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Contact: UsersCellViewModel {
+class Contact: ContactsCellViewModel {
     let imageUrlString: String
     let title: String
     let name: String

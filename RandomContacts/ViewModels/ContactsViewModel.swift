@@ -20,7 +20,7 @@ extension ContactsViewModel {
     
 }
 
-struct ContactViewModel: UsersCellViewModel {
+struct ContactViewModel: ContactsCellViewModel {
     var imageUrlString: String
     var title: String
     var name: String

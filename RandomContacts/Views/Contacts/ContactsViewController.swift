@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -22,11 +22,14 @@ class ContactsViewController: UIViewController {
         
         didSet {
             self.table.reloadData()
+            self.activityView.stopAnimating()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
 
         setupTable()
         
@@ -34,16 +37,17 @@ class ContactsViewController: UIViewController {
     }
     
     private func getContacts() {
+        showActivityIndicatory()
         let contacts = coreDataManager.getContacts()
         
         if contacts.isEmpty {
-            network.getUsers { users in
+            network.getContacts { contacts in
     
-                let users = users.map { user in
-                    return ContactViewModel(imageUrlString: user.imageUrlString, title: user.title, name: user.name, surname: user.surname, phone: user.phone, email: user.email)
+                let contacts = contacts.map { contact in
+                    return ContactViewModel(imageUrlString: contact.imageUrlString, title: contact.title, name: contact.name, surname: contact.surname, phone: contact.phone, email: contact.email)
                 }
                 
-                self.viewModel = ContactsViewModel(contacts: users)
+                self.viewModel = ContactsViewModel(contacts: contacts)
                 
                 for contact in self.viewModel.contacts {
                     self.coreDataManager.createContact(contact: contact)
@@ -74,9 +78,13 @@ class ContactsViewController: UIViewController {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
         guard let searchStr = searchBar.text else { return }
-        //searchString = searchStr
-        
-        showActivityIndicatory()
+        let contacts = coreDataManager.searchContacts(searchString: searchStr)
+        let contactsViewModel = contacts.map { contact in
+            return ContactViewModel(imageUrlString: contact.imageUrlString ?? "", title: contact.title ?? "", name: contact.name ?? "", surname: contact.surname ?? "", phone: contact.phone ?? "", email: contact.email ?? "")
+            
+        }
+        self.viewModel = ContactsViewModel(contacts: contactsViewModel)
+    
     }
 
 }
@@ -104,9 +112,9 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "ContactScene", bundle: nil)
         guard let contactViewController = storyboard.instantiateViewController(identifier: "ContactViewController") as? ContactViewController else { return }
         
-
         contactViewController.email = cellViewModel.email
         contactViewController.name = cellViewModel.name
+        contactViewController.surname = cellViewModel.surname
         contactViewController.phone = cellViewModel.phone
         contactViewController.imageUrlString = cellViewModel.imageUrlString
         
