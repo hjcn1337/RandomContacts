@@ -29,7 +29,6 @@
 		52A14B5625F27FBC00C30753 /* ContactScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A14B5525F27FBC00C30753 /* ContactScene.storyboard */; };
 		52A14B5A25F3F87D00C30753 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B5925F3F87D00C30753 /* ContactsViewModel.swift */; };
 		52A14B5D25F3F8A700C30753 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B5C25F3F8A700C30753 /* Contact.swift */; };
-		52A14B6425F4175A00C30753 /* MessagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B6325F4175A00C30753 /* MessagesHelper.swift */; };
 		52A14B6A25F4D10F00C30753 /* ContactPhotoScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A14B6925F4D10F00C30753 /* ContactPhotoScene.storyboard */; };
 		52A14B6D25F4D11A00C30753 /* ContactPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A14B6C25F4D11A00C30753 /* ContactPhotoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +58,6 @@
 		52A14B5525F27FBC00C30753 /* ContactScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactScene.storyboard; sourceTree = "<group>"; };
 		52A14B5925F3F87D00C30753 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		52A14B5C25F3F8A700C30753 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		52A14B6325F4175A00C30753 /* MessagesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHelper.swift; sourceTree = "<group>"; };
 		52A14B6925F4D10F00C30753 /* ContactPhotoScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactPhotoScene.storyboard; sourceTree = "<group>"; };
 		52A14B6C25F4D11A00C30753 /* ContactPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +116,6 @@
 				52A14B1425F26E3100C30753 /* NetworkDataFetcher.swift */,
 				52A14B1725F26E4500C30753 /* CoreDataStack.swift */,
 				52A14B1B25F26E7C00C30753 /* CoreDataManager.swift */,
-				52A14B6325F4175A00C30753 /* MessagesHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 				52A14B1525F26E3100C30753 /* NetworkDataFetcher.swift in Sources */,
 				52A14B0D25F26DF900C30753 /* NetworkService.swift in Sources */,
 				52A14B3C25F278BA00C30753 /* ContactsViewController.swift in Sources */,
-				52A14B6425F4175A00C30753 /* MessagesHelper.swift in Sources */,
 				52A14B5A25F3F87D00C30753 /* ContactsViewModel.swift in Sources */,
 				52A14B4F25F27FA500C30753 /* ContactViewController.swift in Sources */,
 				52A14B2D25F271CB00C30753 /* ContactsService.swift in Sources */,

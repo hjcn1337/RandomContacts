@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
+import MessageUI
 
-class ContactViewController: UIViewController {
+class ContactViewController: UIViewController, UINavigationControllerDelegate {
     
     var name = ""
     var surname = ""
@@ -63,8 +64,20 @@ class ContactViewController: UIViewController {
     }
     
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
-        let messagesHelper = MessagesHelper()
-        let sendMessageVC = messagesHelper.createMessagesController(phone: phone)
-        present(sendMessageVC, animated: true, completion: nil)
+        
+        if MFMessageComposeViewController.canSendText() {
+            let messageComposeViewController = MFMessageComposeViewController()
+            messageComposeViewController.recipients = [phone]
+            messageComposeViewController.delegate = self
+            messageComposeViewController.messageComposeDelegate = self
+            present(messageComposeViewController, animated: true)
+        }
+    }
+}
+
+extension ContactViewController: MFMessageComposeViewControllerDelegate {
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        dismiss(animated: true)
     }
 }

@@ -52,7 +52,6 @@ struct CoreDataManager: CoreDataManaging {
     
     func searchContacts(searchString: String) -> [ContactEntity] {
         let fetchRequest: NSFetchRequest<ContactEntity> = ContactEntity.fetchRequest()
-        //fetchRequest.predicate = NSPredicate(format: "surname == %@", searchString)
         
         let p1 = NSPredicate(format: "title CONTAINS[c] %@", searchString)
         let p2 = NSPredicate(format: "name CONTAINS[c] %@", searchString)
@@ -60,8 +59,6 @@ struct CoreDataManager: CoreDataManaging {
         let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [p1, p2, p3])
         
         fetchRequest.predicate = predicate
-        
-        //fetchRequest.predicate = NSPredicate(format: "((title == %@) OR (name == %@) OR (surname == %@))", searchString)
         
         do {
             let contacts = try context.fetch(fetchRequest)
@@ -72,15 +69,5 @@ struct CoreDataManager: CoreDataManaging {
         
         return []
     }
-    
-//    func deleteRepoFromFavorites(repo: ContactEntity) {
-//        context.delete(repo)
-//        
-//        do {
-//            try context.save()
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-//    }
     
 }

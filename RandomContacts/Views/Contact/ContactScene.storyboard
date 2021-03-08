@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,48 +13,50 @@
             <objects>
                 <viewController storyboardIdentifier="ContactViewController" id="F9S-CB-hyU" customClass="ContactViewController" customModule="RandomContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qao-35-1NE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZM-Q8-9uN">
-                                <rect key="frame" x="20" y="366.5" width="83" height="24"/>
+                                <rect key="frame" x="20" y="376.66666666666669" width="83" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNf-fC-Ygm">
-                                <rect key="frame" x="20" y="420.5" width="374" height="24"/>
+                                <rect key="frame" x="20" y="410.66666666666669" width="388" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMU-oB-uYe">
-                                <rect key="frame" x="20" y="474.5" width="48" height="21"/>
+                                <rect key="frame" x="20" y="464.66666666666669" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If1-aU-jQK">
-                                <rect key="frame" x="20" y="525.5" width="41" height="21"/>
+                                <rect key="frame" x="20" y="515.66666666666663" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iXt-L3-bMr" customClass="WebImageView" customModule="RandomContacts" customModuleProvider="target">
-                                <rect key="frame" x="20" y="84" width="374" height="242"/>
+                                <rect key="frame" x="20" y="84" width="388" height="251"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iXt-L3-bMr" secondAttribute="height" multiplier="17:11" id="4NN-In-JBz"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-Wt-5dz">
-                                <rect key="frame" x="75" y="580" width="77" height="30"/>
+                                <rect key="frame" x="50" y="570" width="86" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Позвонить"/>
                                 <connections>
                                     <action selector="callPhoneButtonPressed:" destination="F9S-CB-hyU" eventType="touchUpInside" id="C0K-ga-gHg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBg-H9-x4i">
-                                <rect key="frame" x="226" y="580" width="112" height="30"/>
+                                <rect key="frame" x="253" y="570" width="125" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Отправить SMS"/>
                                 <connections>
                                     <action selector="sendMessageButtonPressed:" destination="F9S-CB-hyU" eventType="touchUpInside" id="4fb-c4-7lb"/>
@@ -68,18 +70,17 @@
                             <constraint firstItem="iXt-L3-bMr" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="7kG-tD-jPS"/>
                             <constraint firstItem="1ZM-Q8-9uN" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="AJX-mW-wfE"/>
                             <constraint firstItem="iXt-L3-bMr" firstAttribute="top" secondItem="sHv-Hy-3ZR" secondAttribute="top" constant="40" id="IfA-gq-EzB"/>
-                            <constraint firstItem="XNf-fC-Ygm" firstAttribute="top" secondItem="1ZM-Q8-9uN" secondAttribute="bottom" constant="30" id="JG1-TB-Fbl"/>
+                            <constraint firstItem="XNf-fC-Ygm" firstAttribute="top" secondItem="1ZM-Q8-9uN" secondAttribute="bottom" constant="10" id="JG1-TB-Fbl"/>
                             <constraint firstItem="sHv-Hy-3ZR" firstAttribute="trailing" secondItem="iXt-L3-bMr" secondAttribute="trailing" constant="20" id="Jz2-od-osR"/>
                             <constraint firstItem="If1-aU-jQK" firstAttribute="top" secondItem="pMU-oB-uYe" secondAttribute="bottom" constant="30" id="O5a-c6-Qks"/>
                             <constraint firstItem="aOd-Wt-5dz" firstAttribute="top" secondItem="If1-aU-jQK" secondAttribute="bottom" constant="33.5" id="PRj-b9-XjS"/>
                             <constraint firstItem="1ZM-Q8-9uN" firstAttribute="top" secondItem="iXt-L3-bMr" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="dc9-07-xOy"/>
-                            <constraint firstItem="rBg-H9-x4i" firstAttribute="leading" secondItem="aOd-Wt-5dz" secondAttribute="trailing" constant="74" id="ddr-uu-Frn"/>
                             <constraint firstItem="sHv-Hy-3ZR" firstAttribute="trailing" secondItem="XNf-fC-Ygm" secondAttribute="trailing" constant="20" id="e6e-LA-fHl"/>
-                            <constraint firstItem="aOd-Wt-5dz" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="75" id="eC0-gz-HnX"/>
+                            <constraint firstItem="aOd-Wt-5dz" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="50" id="eC0-gz-HnX"/>
                             <constraint firstItem="If1-aU-jQK" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="hya-tb-8vZ"/>
                             <constraint firstItem="pMU-oB-uYe" firstAttribute="leading" secondItem="sHv-Hy-3ZR" secondAttribute="leading" constant="20" id="rK0-g4-Vkg"/>
                             <constraint firstItem="rBg-H9-x4i" firstAttribute="top" secondItem="If1-aU-jQK" secondAttribute="bottom" constant="33.5" id="vYz-fs-8BU"/>
-                            <constraint firstItem="sHv-Hy-3ZR" firstAttribute="trailing" secondItem="rBg-H9-x4i" secondAttribute="trailing" constant="76" id="xhB-nx-CAa"/>
+                            <constraint firstItem="sHv-Hy-3ZR" firstAttribute="trailing" secondItem="rBg-H9-x4i" secondAttribute="trailing" constant="50" id="xhB-nx-CAa"/>
                             <constraint firstItem="pMU-oB-uYe" firstAttribute="top" secondItem="XNf-fC-Ygm" secondAttribute="bottom" constant="30" id="yZT-kF-wOP"/>
                         </constraints>
                     </view>

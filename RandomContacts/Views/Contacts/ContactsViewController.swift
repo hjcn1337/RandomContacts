@@ -33,20 +33,18 @@ class ContactsViewController: UIViewController, UISearchBarDelegate {
 
         setupTable()
         
-        getContacts()
+        getAllContacts()
     }
     
-    private func getContacts() {
+    private func getAllContacts() {
         showActivityIndicatory()
         let contacts = coreDataManager.getContacts()
         
         if contacts.isEmpty {
             network.getContacts { contacts in
-    
                 let contacts = contacts.map { contact in
                     return ContactViewModel(imageUrlString: contact.imageUrlString, title: contact.title, name: contact.name, surname: contact.surname, phone: contact.phone, email: contact.email)
                 }
-                
                 self.viewModel = ContactsViewModel(contacts: contacts)
                 
                 for contact in self.viewModel.contacts {
@@ -55,14 +53,11 @@ class ContactsViewController: UIViewController, UISearchBarDelegate {
             }
             
         } else {
-            
             let contactsViewModel = contacts.map { contact in
                 return ContactViewModel(imageUrlString: contact.imageUrlString ?? "", title: contact.title ?? "", name: contact.name ?? "", surname: contact.surname ?? "", phone: contact.phone ?? "", email: contact.email ?? "")
-                
             }
             self.viewModel = ContactsViewModel(contacts: contactsViewModel)
         }
-        
     }
     
     private func setupTable() {
@@ -78,13 +73,17 @@ class ContactsViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
         guard let searchStr = searchBar.text else { return }
-        let contacts = coreDataManager.searchContacts(searchString: searchStr)
-        let contactsViewModel = contacts.map { contact in
-            return ContactViewModel(imageUrlString: contact.imageUrlString ?? "", title: contact.title ?? "", name: contact.name ?? "", surname: contact.surname ?? "", phone: contact.phone ?? "", email: contact.email ?? "")
-            
+        
+        if searchStr.isEmpty {
+            getAllContacts()
+        } else {
+            let contacts = coreDataManager.searchContacts(searchString: searchStr)
+            let contactsViewModel = contacts.map { contact in
+                return ContactViewModel(imageUrlString: contact.imageUrlString ?? "", title: contact.title ?? "", name: contact.name ?? "", surname: contact.surname ?? "", phone: contact.phone ?? "", email: contact.email ?? "")
+                
+            }
+            self.viewModel = ContactsViewModel(contacts: contactsViewModel)
         }
-        self.viewModel = ContactsViewModel(contacts: contactsViewModel)
-    
     }
 
 }
